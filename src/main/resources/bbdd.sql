@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `academiapolesp`.`usuario` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `nombre` VARCHAR(45) NULL,
     `apellidos` VARCHAR(80) NULL,
-    `nombreUsuario` VARCHAR(45) NULL,
+    `nombre_usuario` VARCHAR(45) NULL,
     `contrasenya` VARCHAR(100) NULL,
     `email` VARCHAR(80) NULL,
     `admin` TINYINT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `academiapolesp`.`temario` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `tema` INT NULL,
     `titulo` VARCHAR(45) NULL,
-    `urlPdf` VARCHAR(100) NULL,
+    `pdf` VARCHAR(100) NULL,
     PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

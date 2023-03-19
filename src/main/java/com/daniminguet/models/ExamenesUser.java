@@ -24,16 +24,6 @@ public class ExamenesUser {
     @Basic
     @Column(name = "fecha", nullable = true)
     private Date fecha;
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(
-            name = "datos_examen",
-            joinColumns = {@JoinColumn(name = "fk_examen")},
-            inverseJoinColumns = {@JoinColumn(name = "fk_preguntas")}
-    )
-    private List<Preguntas> preguntasUser;
 
     public int getFkUsuario() {
         return fkUsuario;
@@ -65,10 +55,6 @@ public class ExamenesUser {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public List<Preguntas> getPreguntasUser() {
-        return preguntasUser;
     }
 
     @Override

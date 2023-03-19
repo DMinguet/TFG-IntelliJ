@@ -18,8 +18,8 @@ public class Temario {
     @Column(name = "titulo", nullable = true, length = 45)
     private String titulo;
     @Basic
-    @Column(name = "urlPdf", nullable = true, length = 100)
-    private String urlPdf;
+    @Column(name = "pdf", nullable = true, length = 100)
+    private String pdf;
     @OneToMany(mappedBy = "temario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Preguntas> preguntasTema;
 
@@ -47,12 +47,12 @@ public class Temario {
         this.titulo = titulo;
     }
 
-    public String getUrlPdf() {
-        return urlPdf;
+    public String getPdf() {
+        return pdf;
     }
 
-    public void setUrlPdf(String urlPdf) {
-        this.urlPdf = urlPdf;
+    public void setPdf(String urlPdf) {
+        this.pdf = urlPdf;
     }
 
     public List<Preguntas> getPreguntasTema() {
@@ -64,11 +64,11 @@ public class Temario {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Temario temario = (Temario) o;
-        return id == temario.id && Objects.equals(tema, temario.tema) && Objects.equals(titulo, temario.titulo) && Objects.equals(urlPdf, temario.urlPdf);
+        return id == temario.id && Objects.equals(tema, temario.tema) && Objects.equals(titulo, temario.titulo) && Objects.equals(pdf, temario.pdf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, tema, titulo, urlPdf);
+        return Objects.hash(id, tema, titulo, pdf);
     }
 }

@@ -23,8 +23,6 @@ public class Preguntas {
     private Object respuesta;
     @ManyToMany(mappedBy = "preguntasExam")
     private List<Examen> examenes;
-    @ManyToMany(mappedBy = "preguntasUser")
-    private List<ExamenesUser> examenesUser;
 
     public int getId() {
         return id;
@@ -58,9 +56,6 @@ public class Preguntas {
         return examenes;
     }
 
-    public List<ExamenesUser> getExamenesUser() {
-        return examenesUser;
-    }
 
     @Override
     public boolean equals(Object o) {
