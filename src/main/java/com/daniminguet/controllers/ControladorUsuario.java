@@ -48,6 +48,13 @@ public class ControladorUsuario {
 
     @PutMapping("/update")
     public boolean updateUser(@RequestBody Usuario usuario) {
+        for (Usuario user : repo.findAll()) {
+            if (user.getNombreUsuario().equals(usuario.getNombreUsuario())) {
+                System.out.println("El usuario ya existe");
+                return false;
+            }
+        }
+
         try {
             repo.save(usuario);
             System.out.println("Usuario actualizado");
