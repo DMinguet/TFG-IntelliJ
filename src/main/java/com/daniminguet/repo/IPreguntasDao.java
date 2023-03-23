@@ -1,4 +1,7 @@
 package com.daniminguet.repo;
 
-public interface IPreguntasDao {
+import com.daniminguet.models.Preguntas;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IPreguntasDao extends JpaRepository<Preguntas, Integer> {
 }
