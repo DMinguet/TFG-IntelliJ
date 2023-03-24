@@ -25,7 +25,7 @@ public class ControladorTemario {
     }
 
     @PostMapping("/add")
-    public boolean addUser(@RequestBody Temario temario) {
+    public boolean addTemario(@RequestBody Temario temario) {
         for (Temario tema : repo.findAll()) {
             if (tema.getTema() == temario.getTema() || tema.getTitulo().equals(temario.getTitulo())) {
                 System.out.println("El temario ya existe");

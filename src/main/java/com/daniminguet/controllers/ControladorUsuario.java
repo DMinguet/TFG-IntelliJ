@@ -27,7 +27,7 @@ public class ControladorUsuario {
     @PostMapping("/add")
     public boolean addUser(@RequestBody Usuario usuario) {
         for (Usuario user : repo.findAll()) {
-            if (user.getNombre().equals(usuario.getNombre()) && user.getApellidos().equals(usuario.getApellidos()) || user.getNombreUsuario().equals(usuario.getNombreUsuario())) {
+            if (user.getNombre().equals(usuario.getNombre()) && user.getApellidos().equals(usuario.getApellidos()) || user.getNombreUsuario().equals(usuario.getNombreUsuario()) || user.getEmail().equals(usuario.getEmail())) {
                 System.out.println("El usuario ya existe");
                 return false;
             }
