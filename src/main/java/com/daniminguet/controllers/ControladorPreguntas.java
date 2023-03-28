@@ -2,7 +2,6 @@ package com.daniminguet.controllers;
 
 import com.daniminguet.models.Preguntas;
 import com.daniminguet.repo.IPreguntasDao;
-import com.daniminguet.repo.ITemarioDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +13,6 @@ import java.util.Optional;
 public class ControladorPreguntas {
     @Autowired
     private IPreguntasDao repo;
-    @Autowired
-    private ITemarioDao repoTemario;
 
     @GetMapping("/all")
     public List<Preguntas> getPreguntas() {
