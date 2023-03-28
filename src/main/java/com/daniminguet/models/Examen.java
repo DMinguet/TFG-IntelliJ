@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 public class Examen {
@@ -15,18 +14,6 @@ public class Examen {
     @Basic
     @Column(name = "titulo", nullable = true, length = 45)
     private String titulo;
-    @ManyToMany(mappedBy = "examenes")
-    private List<Usuario> usuarios;
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(
-            name = "preguntas_exam",
-            joinColumns = {@JoinColumn(name = "fk_examen")},
-            inverseJoinColumns = {@JoinColumn(name = "fk_preguntas")}
-    )
-    private List<Preguntas> preguntasExam;
 
     public int getId() {
         return id;
@@ -42,14 +29,6 @@ public class Examen {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public List<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public List<Preguntas> getPreguntasExam() {
-        return preguntasExam;
     }
 
     @Override

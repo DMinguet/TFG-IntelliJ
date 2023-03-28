@@ -27,7 +27,7 @@ public class ControladorExamen {
     @PostMapping("/add")
     public boolean addExamen(@RequestBody Examen examen) {
         for (Examen exam : repo.findAll()) {
-            if (exam.getTitulo().equals(examen.getTitulo()) || exam.getPreguntasExam().equals(examen.getPreguntasExam())) {
+            if (exam.getTitulo().equals(examen.getTitulo())) {
                 System.out.println("El examen ya existe");
                 return false;
             }
@@ -47,7 +47,7 @@ public class ControladorExamen {
     @PutMapping("/update")
     public boolean updateExamen(@RequestBody Examen examen) {
         for (Examen exam : repo.findAll()) {
-            if (exam.getTitulo().equals(examen.getTitulo()) || exam.getPreguntasExam().equals(examen.getPreguntasExam())) {
+            if (exam.getTitulo().equals(examen.getTitulo())) {
                 System.out.println("El examen ya existe");
                 return false;
             }

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 public class Usuario {
@@ -30,16 +29,6 @@ public class Usuario {
     @Basic
     @Column(name = "admin", nullable = true)
     private Byte admin;
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(
-            name = "examenes_user",
-            joinColumns = {@JoinColumn(name = "fk_usuario")},
-            inverseJoinColumns = {@JoinColumn(name = "fk_examen")}
-    )
-    private List<Examen> examenes;
 
     public int getId() {
         return id;
@@ -95,10 +84,6 @@ public class Usuario {
 
     public void setAdmin(Byte admin) {
         this.admin = admin;
-    }
-
-    public List<Examen> getExamenes() {
-        return examenes;
     }
 
     @Override

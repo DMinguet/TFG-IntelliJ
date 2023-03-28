@@ -11,17 +11,15 @@ public class Preguntas {
     @Id
     @Column(name = "id", nullable = false)
     private int id;
-    @ManyToOne()
-    @JoinColumn(name = "fk_temario")
-    private Temario temario;
+    @Basic
+    @Column(name = "fk_temario")
+    private int temario;
     @Basic
     @Column(name = "pregunta", nullable = true, length = 500)
     private String pregunta;
     @Basic
     @Column(name = "respuesta", nullable = true)
-    private Respuesta respuesta;
-    @ManyToMany(mappedBy = "preguntasExam")
-    private List<Examen> examenes;
+    private Object respuesta;
 
     public int getId() {
         return id;
@@ -47,20 +45,12 @@ public class Preguntas {
         this.respuesta = respuesta;
     }
 
-    public Temario getTemario() {
+    public int getTemario() {
         return temario;
     }
 
-    public void setTemario(Temario temario) {
+    public void setTemario(int temario) {
         this.temario = temario;
-    }
-
-    public List<Examen> getExamenes() {
-        return examenes;
-    }
-
-    public void setExamenes(List<Examen> examenes) {
-        this.examenes = examenes;
     }
 
     @Override

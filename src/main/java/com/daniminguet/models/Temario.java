@@ -2,7 +2,6 @@ package com.daniminguet.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,8 +19,6 @@ public class Temario {
     @Basic
     @Column(name = "pdf", nullable = true, length = 100)
     private String pdf;
-    @OneToMany(mappedBy = "temario", cascade = CascadeType.ALL)
-    private List<Preguntas> preguntasTema;
 
     public int getId() {
         return id;
@@ -51,12 +48,8 @@ public class Temario {
         return pdf;
     }
 
-    public void setPdf(String urlPdf) {
-        this.pdf = urlPdf;
-    }
-
-    public List<Preguntas> getPreguntasTema() {
-        return preguntasTema;
+    public void setPdf(String pdf) {
+        this.pdf = pdf;
     }
 
     @Override
@@ -70,16 +63,5 @@ public class Temario {
     @Override
     public int hashCode() {
         return Objects.hash(id, tema, titulo, pdf);
-    }
-
-    @Override
-    public String toString() {
-        return "Temario{" +
-                "id=" + id +
-                ", tema=" + tema +
-                ", titulo='" + titulo + '\'' +
-                ", pdf='" + pdf + '\'' +
-                ", preguntasTema=" + preguntasTema +
-                '}';
     }
 }

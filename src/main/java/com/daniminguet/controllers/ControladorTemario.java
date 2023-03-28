@@ -54,14 +54,10 @@ public class ControladorTemario {
             }
         }
 
-        System.out.println(cuentaConcurrencias);
-
         if (cuentaConcurrencias > 1) {
             System.out.println("El temario ya existe");
             return false;
         }
-
-        System.out.println(temario.toString());
 
         try {
             repo.save(temario);
