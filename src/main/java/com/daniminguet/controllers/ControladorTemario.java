@@ -27,7 +27,7 @@ public class ControladorTemario {
     @PostMapping("/add")
     public boolean addTemario(@RequestBody Temario temario) {
         for (Temario tema : repo.findAll()) {
-            if (tema.getTema() == temario.getTema() || tema.getTitulo().equals(temario.getTitulo())) {
+            if (tema.getTema().equals(temario.getTema()) || tema.getTitulo().equals(temario.getTitulo())) {
                 System.out.println("El temario ya existe");
                 return false;
             }
@@ -46,12 +46,22 @@ public class ControladorTemario {
 
     @PutMapping("/update")
     public boolean updateTemario(@RequestBody Temario temario) {
+        int cuentaConcurrencias = 0;
+
         for (Temario tema : repo.findAll()) {
             if (tema.getTema().equals(temario.getTema()) || tema.getTitulo().equals(temario.getTitulo())) {
-                System.out.println("El temario ya existe");
-                return false;
+                cuentaConcurrencias++;
             }
         }
+
+        System.out.println(cuentaConcurrencias);
+
+        if (cuentaConcurrencias > 1) {
+            System.out.println("El temario ya existe");
+            return false;
+        }
+
+        System.out.println(temario.toString());
 
         try {
             repo.save(temario);

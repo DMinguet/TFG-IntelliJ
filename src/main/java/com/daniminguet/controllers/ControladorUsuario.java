@@ -48,11 +48,17 @@ public class ControladorUsuario {
 
     @PutMapping("/update")
     public boolean updateUser(@RequestBody Usuario usuario) {
+        int cuentaNbreUsuario = 0;
+
         for (Usuario user : repo.findAll()) {
-            if (user.getNombreUsuario().equals(usuario.getNombreUsuario())) {
-                System.out.println("El usuario ya existe");
-                return false;
+            if (user.getNombre().equals(usuario.getNombre()) && user.getApellidos().equals(usuario.getApellidos()) || user.getNombreUsuario().equals(usuario.getNombreUsuario()) || user.getEmail().equals(usuario.getEmail())) {
+                cuentaNbreUsuario++;
             }
+        }
+
+        if (cuentaNbreUsuario > 1) {
+            System.out.println("El usuario ya existe");
+            return false;
         }
 
         try {

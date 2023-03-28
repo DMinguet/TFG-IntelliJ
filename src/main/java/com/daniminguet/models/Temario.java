@@ -20,7 +20,7 @@ public class Temario {
     @Basic
     @Column(name = "pdf", nullable = true, length = 100)
     private String pdf;
-    @OneToMany(mappedBy = "temario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "temario", cascade = CascadeType.ALL)
     private List<Preguntas> preguntasTema;
 
     public int getId() {
@@ -70,5 +70,16 @@ public class Temario {
     @Override
     public int hashCode() {
         return Objects.hash(id, tema, titulo, pdf);
+    }
+
+    @Override
+    public String toString() {
+        return "Temario{" +
+                "id=" + id +
+                ", tema=" + tema +
+                ", titulo='" + titulo + '\'' +
+                ", pdf='" + pdf + '\'' +
+                ", preguntasTema=" + preguntasTema +
+                '}';
     }
 }
