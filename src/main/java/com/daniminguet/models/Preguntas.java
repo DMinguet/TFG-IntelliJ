@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 public class Preguntas {
@@ -20,7 +19,7 @@ public class Preguntas {
     private String pregunta;
     @Basic
     @Column(name = "respuesta", nullable = true)
-    private Object respuesta;
+    private Respuesta respuesta;
     @ManyToMany(mappedBy = "preguntasExam")
     private List<Examen> examenes;
 
@@ -30,10 +29,6 @@ public class Preguntas {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Temario getTemario() {
-        return temario;
     }
 
     public String getPregunta() {
@@ -48,14 +43,25 @@ public class Preguntas {
         return respuesta;
     }
 
-    public void setRespuesta(Object respuesta) {
+    public void setRespuesta(Respuesta respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public Temario getTemario() {
+        return temario;
+    }
+
+    public void setTemario(Temario temario) {
+        this.temario = temario;
     }
 
     public List<Examen> getExamenes() {
         return examenes;
     }
 
+    public void setExamenes(List<Examen> examenes) {
+        this.examenes = examenes;
+    }
 
     @Override
     public boolean equals(Object o) {
