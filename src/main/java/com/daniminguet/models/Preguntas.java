@@ -2,7 +2,6 @@ package com.daniminguet.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,14 +11,14 @@ public class Preguntas {
     @Column(name = "id", nullable = false)
     private int id;
     @Basic
-    @Column(name = "fk_temario")
-    private int temario;
-    @Basic
     @Column(name = "pregunta", nullable = true, length = 500)
     private String pregunta;
     @Basic
     @Column(name = "respuesta", nullable = true)
     private Object respuesta;
+    @Basic
+    @Column(name = "fk_temario", nullable = false)
+    private int fkTemario;
 
     public int getId() {
         return id;
@@ -41,16 +40,16 @@ public class Preguntas {
         return respuesta;
     }
 
-    public void setRespuesta(Respuesta respuesta) {
+    public void setRespuesta(Object respuesta) {
         this.respuesta = respuesta;
     }
 
-    public int getTemario() {
-        return temario;
+    public int getFkTemario() {
+        return fkTemario;
     }
 
-    public void setTemario(int temario) {
-        this.temario = temario;
+    public void setFkTemario(int fkTemario) {
+        this.fkTemario = fkTemario;
     }
 
     @Override
@@ -58,11 +57,21 @@ public class Preguntas {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Preguntas preguntas = (Preguntas) o;
-        return id == preguntas.id && temario == preguntas.temario && Objects.equals(pregunta, preguntas.pregunta) && Objects.equals(respuesta, preguntas.respuesta);
+        return id == preguntas.id && fkTemario == preguntas.fkTemario && Objects.equals(pregunta, preguntas.pregunta) && Objects.equals(respuesta, preguntas.respuesta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, temario, pregunta, respuesta);
+        return Objects.hash(id, pregunta, respuesta, fkTemario);
+    }
+
+    @Override
+    public String toString() {
+        return "Preguntas{" +
+                "id=" + id +
+                ", pregunta='" + pregunta + '\'' +
+                ", respuesta=" + respuesta +
+                ", fkTemario=" + fkTemario +
+                '}';
     }
 }

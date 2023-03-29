@@ -46,11 +46,16 @@ public class ControladorExamen {
 
     @PutMapping("/update")
     public boolean updateExamen(@RequestBody Examen examen) {
+        int cuentaConcurrencias = 0;
         for (Examen exam : repo.findAll()) {
             if (exam.getTitulo().equals(examen.getTitulo())) {
-                System.out.println("El examen ya existe");
-                return false;
+                cuentaConcurrencias++;
             }
+        }
+
+        if (cuentaConcurrencias > 1) {
+            System.out.println("El examen ya existe");
+            return false;
         }
 
         try {

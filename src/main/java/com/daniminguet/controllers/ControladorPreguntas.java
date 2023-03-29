@@ -26,6 +26,8 @@ public class ControladorPreguntas {
 
     @PostMapping("/add")
     public boolean addPreguntas(@RequestBody Preguntas preguntas) {
+        System.out.println(preguntas.toString());
+
         for (Preguntas preg : repo.findAll()) {
             if (preg.getPregunta().equals(preguntas.getPregunta())) {
                 System.out.println("La pregunta ya existe");
@@ -46,11 +48,16 @@ public class ControladorPreguntas {
 
     @PutMapping("/update")
     public boolean updatePreguntas(@RequestBody Preguntas preguntas) {
+        int cuentaConcurrencias = 0;
         for (Preguntas preg : repo.findAll()) {
             if (preg.getPregunta().equals(preguntas.getPregunta())) {
-                System.out.println("La pregunta ya existe");
-                return false;
+                cuentaConcurrencias++;
             }
+        }
+
+        if (cuentaConcurrencias > 1) {
+            System.out.println("La pregunta ya existe");
+            return false;
         }
 
         try {
