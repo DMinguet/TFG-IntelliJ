@@ -2,6 +2,7 @@ package com.daniminguet.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +20,9 @@ public class Temario {
     @Basic
     @Column(name = "pdf", nullable = true, length = 100)
     private String pdf;
+
+    @OneToMany(mappedBy = "temario", cascade = CascadeType.ALL)
+    private List<Pregunta> preguntas;
 
     public int getId() {
         return id;
@@ -63,5 +67,16 @@ public class Temario {
     @Override
     public int hashCode() {
         return Objects.hash(id, tema, titulo, pdf);
+    }
+
+    @Override
+    public String toString() {
+        return "Temario{" +
+                "id=" + id +
+                ", tema=" + tema +
+                ", titulo='" + titulo + '\'' +
+                ", pdf='" + pdf + '\'' +
+                ", preguntas=" + preguntas +
+                '}';
     }
 }

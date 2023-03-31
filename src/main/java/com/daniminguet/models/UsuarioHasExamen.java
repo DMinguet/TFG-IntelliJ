@@ -6,17 +6,17 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "examenes_user", schema = "academiapolesp", catalog = "")
-@IdClass(ExamenesUserPK.class)
-public class ExamenesUser {
+@Table(name = "usuario_has_examen", schema = "polesp", catalog = "")
+@IdClass(UsuarioHasExamenPK.class)
+public class UsuarioHasExamen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "fk_usuario", nullable = false)
-    private int fkUsuario;
+    @Column(name = "usuario_id", nullable = false)
+    private int usuarioId;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "fk_examen", nullable = false)
-    private int fkExamen;
+    @Column(name = "examen_id", nullable = false)
+    private int examenId;
     @Basic
     @Column(name = "nota", nullable = true, precision = 0)
     private Double nota;
@@ -24,20 +24,20 @@ public class ExamenesUser {
     @Column(name = "fecha", nullable = true)
     private Date fecha;
 
-    public int getFkUsuario() {
-        return fkUsuario;
+    public int getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setFkUsuario(int fkUsuario) {
-        this.fkUsuario = fkUsuario;
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
-    public int getFkExamen() {
-        return fkExamen;
+    public int getExamenId() {
+        return examenId;
     }
 
-    public void setFkExamen(int fkExamen) {
-        this.fkExamen = fkExamen;
+    public void setExamenId(int examenId) {
+        this.examenId = examenId;
     }
 
     public Double getNota() {
@@ -60,12 +60,12 @@ public class ExamenesUser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ExamenesUser that = (ExamenesUser) o;
-        return fkUsuario == that.fkUsuario && fkExamen == that.fkExamen && Objects.equals(nota, that.nota) && Objects.equals(fecha, that.fecha);
+        UsuarioHasExamen that = (UsuarioHasExamen) o;
+        return usuarioId == that.usuarioId && examenId == that.examenId && Objects.equals(nota, that.nota) && Objects.equals(fecha, that.fecha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fkUsuario, fkExamen, nota, fecha);
+        return Objects.hash(usuarioId, examenId, nota, fecha);
     }
 }

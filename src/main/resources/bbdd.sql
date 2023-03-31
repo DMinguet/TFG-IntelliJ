@@ -108,41 +108,46 @@ a) Por una baja tasa de natalidad y mortalidad.
 b) Por una alta tasa de natalidad y mortalidad.
 c) Por la falta de higiene.
 d) La a) y la c) son correctas.', 'B', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (2, 'En el sistema político que surgió en Europa en la segunda mitad del Siglo XVIII. Entre los
 monarcas que ejercieron el despotismo ilustrado figuran:
 a) Catalina II de Rusia, Felipe I de España, Federico II de Austria.
 b) José II de Austria, Federico II de España, Catalina I de Prusia.
 c) Catalaina II de Rusia, José II de Austria, Federico II de Prusia y Carlos III de España.
 d) Jose I de Rusia, Juan Carlos I de España, Catalina de Aragón, Juana la Loca.', 'C', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (3, '¿Cuando se desarrolla el rococó como estilo artístico?
 a) Durante la Segunda Guerra Mundial.
 b) En España entre los años 1736 y 1760.
 c) En Francia entre 1730 y 1760.
 d) Ninguna respuesta es correcta.', 'C', 1);
-INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (4, 'En general, las poblaciones europeas del Antiguo Régimen tenían una serie de rasgos comunes.
-Señale la respuesta correcta:
-a) Una mortalidad muy elevada (entre el 30 y el 38 por mil) y muy baja esperanza de vida al
-nacer (en torno a los 30 años): Particularmente elevada era la mortalidad infantil.
-b) Una alta natalidad (7 hijos de media por matrimonio), con una esperanza de vida que apenas
-llegaba a los 50 años.
-c) Una alta tasa de mortalidad, causada por la subalimentación, la falta de higiene,', 'A', 1);
+
+INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (4, 'En general, las poblaciones europeas del Antiguo Régimen tenían una serie de rasgos comunes. Señale la respuesta correcta:
+a) Una mortalidad muy elevada (entre el 30 y el 38 por mil) y muy baja esperanza de vida al nacer (en torno a los 30 años)
+b) Una alta natalidad (7 hijos de media por matrimonio), con una esperanza de vida que apenas llegaba a los 50 años.
+c) Una alta tasa de mortalidad, causada por la subalimentación, la falta de higiene
+d) Ninguna es cierta', 'A', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (5, 'Entre los objetivos del sistema político que surgió en Europa en la segunda mitad del Siglo XVIII,
 se encuentran los siguientes:
 a) Incrementar el poder de la monarquía mediante el desarrollo económico, cultural y militar.
 b) Racionalizar la Administración con el apoyo de secretarios y ministros ilustrados.
 c) Promover programas de desarrollo agrícola e industrial y liberalizar el comercio.
 d) Todas son correctas.', 'D', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (6, '¿Durante que siglo se desarrolla en Europa el barroco no sólo como estilo artístico, sino también
 como movimiento cultural?
 a) En el siglo XIV.
 b) En el siglo XVIII y el principio del XIV.
 c) En el siglo XVI y el primer tercio del siglo XVII-
 d) En el siglo XVII y el primer tercio del siglo XVIII.', 'D', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (7, '¿Cual de las siguientes afirmaciones es correcta?
 a) Las sociedades del Antiguo Régimen eran predominantemente rurales y agrarias.
 b) El rococó se desarrolló en Francia entre los años 1930 y 1960.
 c) La Ilustración surge como sistema político en Europa en el siglo XVII.
 d) Ninguna afirmación es correcta.', 'A', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (8, 'El sistema demográfico de las sociedades del Antiguo Régimen se caracterizaba por las siguientes
 afirmaciones:
 a) Por una alta tasa de mortalidad y natalidad, debido al efecto de las guerras y las hambrunas.
@@ -151,11 +156,13 @@ agraria.
 c) Por el desarrollo del barroco no solo como estilo artístico, sino también como movimiento
 cultural.
 d) Todas las respuestas son incorrectas.', 'B', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (9, 'Durante el siglo XVII y el primer tercio del siglo XVIII, se desarrolló en Europa:
 a) El rococó como un movimiento cultural y artístico que se desarrollaría en Francia.
 b) El barroco no sólo como estilo artístico, sino también como movimiento cultural.
 c) El barroco como un estilo unicamente artístico desarrollado entre 1730 y 1760.
 d) Ninguna afirmación es correcta.', 'B', 1);
+
 INSERT INTO academiapolesp.preguntas (id, pregunta, respuesta, fk_temario) VALUES (10, 'Un rasgo común de las poblaciones europeas del Antiguo Régimen era:
 a) En los Estados de Europa, la forma de gobierno predominante era la dictadura.
 b) El rococó es un estilo perteneciente al movimiento cultural.

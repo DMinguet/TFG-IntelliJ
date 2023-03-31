@@ -2,6 +2,7 @@ package com.daniminguet.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -28,6 +29,18 @@ public class Usuario {
     @Basic
     @Column(name = "admin", nullable = true)
     private Byte admin;
+
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+            name = "usuario_has_examen",
+            joinColumns = {@JoinColumn(name = "usuario_id")},
+            inverseJoinColumns = {@JoinColumn(name = "examen_id")}
+    )
+    private List<Examen> examenes;
+
 
     public int getId() {
         return id;

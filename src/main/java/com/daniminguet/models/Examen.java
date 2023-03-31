@@ -15,6 +15,12 @@ public class Examen {
     @Column(name = "titulo", nullable = true, length = 45)
     private String titulo;
 
+    @OneToMany(mappedBy = "examen", cascade = CascadeType.ALL)
+    private List<Pregunta> preguntas;
+
+    @ManyToMany(mappedBy = "examenes")
+    private List<Usuario> usuarios;
+
     public int getId() {
         return id;
     }
@@ -42,5 +48,15 @@ public class Examen {
     @Override
     public int hashCode() {
         return Objects.hash(id, titulo);
+    }
+
+    @Override
+    public String toString() {
+        return "Examen{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", preguntas=" + preguntas +
+                ", usuarios=" + usuarios +
+                '}';
     }
 }

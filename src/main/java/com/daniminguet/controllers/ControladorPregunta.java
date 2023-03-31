@@ -1,7 +1,7 @@
 package com.daniminguet.controllers;
 
-import com.daniminguet.models.Preguntas;
-import com.daniminguet.repo.IPreguntasDao;
+import com.daniminguet.models.Pregunta;
+import com.daniminguet.repo.IPreguntaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,34 +9,34 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/preguntas")
-public class ControladorPreguntas {
+@RequestMapping("/pregunta")
+public class ControladorPregunta {
     @Autowired
-    private IPreguntasDao repo;
+    private IPreguntaDao repo;
 
     @GetMapping("/all")
-    public List<Preguntas> getPreguntas() {
+    public List<Pregunta> getPreguntas() {
         return repo.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public Optional<Preguntas> getPregunta(@PathVariable("id") Integer id) {
+    public Optional<Pregunta> getPregunta(@PathVariable("id") Integer id) {
         return repo.findById(id);
     }
 
     @PostMapping("/add")
-    public boolean addPreguntas(@RequestBody Preguntas preguntas) {
-        System.out.println(preguntas.toString());
+    public boolean addPregunta(@RequestBody Pregunta pregunta) {
+        System.out.println(pregunta.toString());
 
-        for (Preguntas preg : repo.findAll()) {
-            if (preg.getPregunta().equals(preguntas.getPregunta())) {
+        for (Pregunta preg : repo.findAll()) {
+            if (preg.getPregunta().equals(pregunta.getPregunta())) {
                 System.out.println("La pregunta ya existe");
                 return false;
             }
         }
 
         try {
-            repo.save(preguntas);
+            repo.save(pregunta);
             System.out.println("Pregunta añadida");
             return true;
         } catch (Exception e) {
@@ -47,10 +47,10 @@ public class ControladorPreguntas {
     }
 
     @PutMapping("/update")
-    public boolean updatePreguntas(@RequestBody Preguntas preguntas) {
+    public boolean updatePregunta(@RequestBody Pregunta pregunta) {
         int cuentaConcurrencias = 0;
-        for (Preguntas preg : repo.findAll()) {
-            if (preg.getPregunta().equals(preguntas.getPregunta())) {
+        for (Pregunta preg : repo.findAll()) {
+            if (preg.getPregunta().equals(pregunta.getPregunta())) {
                 cuentaConcurrencias++;
             }
         }
@@ -61,7 +61,7 @@ public class ControladorPreguntas {
         }
 
         try {
-            repo.save(preguntas);
+            repo.save(pregunta);
             System.out.println("Pregunta actualizada");
             return true;
         } catch (Exception e){
@@ -71,7 +71,7 @@ public class ControladorPreguntas {
     }
 
     @DeleteMapping(value = "/{id}")
-    public boolean deletePreguntas(@PathVariable("id") Integer id) {
+    public boolean deletePregunta(@PathVariable("id") Integer id) {
         try {
             repo.deleteById(id);
             System.out.println("Pregunta eliminada correctamente");

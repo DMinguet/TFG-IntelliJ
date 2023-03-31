@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Preguntas {
+public class Pregunta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -15,10 +15,13 @@ public class Preguntas {
     private String pregunta;
     @Basic
     @Column(name = "respuesta", nullable = true)
-    private Object respuesta;
-    @Basic
-    @Column(name = "fk_temario", nullable = false)
-    private int fkTemario;
+    private String respuesta;
+    @ManyToOne
+    @JoinColumn(name = "temario_id")
+    private Temario temario;
+    @ManyToOne
+    @JoinColumn(name = "examen_id")
+    private Examen examen;
 
     public int getId() {
         return id;
@@ -36,42 +39,51 @@ public class Preguntas {
         this.pregunta = pregunta;
     }
 
-    public Object getRespuesta() {
+    public String getRespuesta() {
         return respuesta;
     }
 
-    public void setRespuesta(Object respuesta) {
+    public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
     }
 
-    public int getFkTemario() {
-        return fkTemario;
+    public Temario getTemario() {
+        return temario;
     }
 
-    public void setFkTemario(int fkTemario) {
-        this.fkTemario = fkTemario;
+    public void setTemario(Temario temario) {
+        this.temario = temario;
+    }
+
+    public Examen getExamen() {
+        return examen;
+    }
+
+    public void setExamen(Examen examen) {
+        this.examen = examen;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Preguntas preguntas = (Preguntas) o;
-        return id == preguntas.id && fkTemario == preguntas.fkTemario && Objects.equals(pregunta, preguntas.pregunta) && Objects.equals(respuesta, preguntas.respuesta);
+        Pregunta pregunta1 = (Pregunta) o;
+        return id == pregunta1.id && temario == pregunta1.temario && examen == pregunta1.examen && Objects.equals(pregunta, pregunta1.pregunta) && Objects.equals(respuesta, pregunta1.respuesta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, pregunta, respuesta, fkTemario);
+        return Objects.hash(id, pregunta, respuesta, temario, examen);
     }
 
     @Override
     public String toString() {
-        return "Preguntas{" +
+        return "Pregunta{" +
                 "id=" + id +
                 ", pregunta='" + pregunta + '\'' +
                 ", respuesta=" + respuesta +
-                ", fkTemario=" + fkTemario +
+                ", temario=" + temario +
+                ", examen=" + examen +
                 '}';
     }
 }
