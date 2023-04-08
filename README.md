@@ -3,3 +3,5 @@
 ## ACADEMIA POLESP
 
 Aplicación móvil de una academia en la cual se podrán descargar los temarios en PDF, hacer exámenes, ver las notas...
+
+Contraseñas de ambos usuarios creados: 1234

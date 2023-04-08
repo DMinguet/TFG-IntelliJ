@@ -9,6 +9,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class UsuarioHasExamenPK implements Serializable {
+    @Column(name = "id", nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @Column(name = "usuario_id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +21,14 @@ public class UsuarioHasExamenPK implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int examenId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getUsuarioId() {
         return usuarioId;
@@ -39,11 +51,11 @@ public class UsuarioHasExamenPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UsuarioHasExamenPK that = (UsuarioHasExamenPK) o;
-        return usuarioId == that.usuarioId && examenId == that.examenId;
+        return id == that.id && usuarioId == that.usuarioId && examenId == that.examenId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(usuarioId, examenId);
+        return Objects.hash(id, usuarioId, examenId);
     }
 }

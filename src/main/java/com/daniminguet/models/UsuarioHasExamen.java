@@ -2,13 +2,18 @@ package com.daniminguet.models;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.Objects;
 
 @Entity
 @Table(name = "usuario_has_examen", schema = "polesp", catalog = "")
 @IdClass(UsuarioHasExamenPK.class)
 public class UsuarioHasExamen {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "id", nullable = false)
+    private int id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "usuario_id", nullable = false)
@@ -23,6 +28,14 @@ public class UsuarioHasExamen {
     @Basic
     @Column(name = "fecha", nullable = true)
     private Date fecha;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getUsuarioId() {
         return usuarioId;
@@ -61,11 +74,23 @@ public class UsuarioHasExamen {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UsuarioHasExamen that = (UsuarioHasExamen) o;
-        return usuarioId == that.usuarioId && examenId == that.examenId && Objects.equals(nota, that.nota) && Objects.equals(fecha, that.fecha);
+        return id == that.id && usuarioId == that.usuarioId && examenId == that.examenId && Objects.equals(nota, that.nota) && Objects.equals(fecha, that.fecha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(usuarioId, examenId, nota, fecha);
+        return Objects.hash(id, usuarioId, examenId, nota, fecha);
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        return "UsuarioHasExamen{" +
+                "id=" + id +
+                ", usuarioId=" + usuarioId +
+                ", examenId=" + examenId +
+                ", nota=" + nota +
+                ", fecha=" + sdf.format(fecha) +
+                '}';
     }
 }

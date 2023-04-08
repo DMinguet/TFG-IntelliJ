@@ -26,8 +26,6 @@ public class ControladorPregunta {
 
     @PostMapping("/add")
     public boolean addPregunta(@RequestBody Pregunta pregunta) {
-        System.out.println(pregunta.toString());
-
         for (Pregunta preg : repo.findAll()) {
             if (preg.getPregunta().equals(pregunta.getPregunta())) {
                 System.out.println("La pregunta ya existe");
