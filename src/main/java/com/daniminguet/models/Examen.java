@@ -18,8 +18,8 @@ public class Examen {
     @OneToMany(mappedBy = "examen", cascade = CascadeType.ALL)
     private List<Pregunta> preguntas;
 
-    @ManyToMany(mappedBy = "examenes")
-    private List<Usuario> usuarios;
+    @OneToMany(mappedBy = "examen")
+    private List<UsuarioHasExamen> usuarios;
 
     public int getId() {
         return id;

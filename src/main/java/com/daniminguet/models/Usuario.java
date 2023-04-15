@@ -30,16 +30,8 @@ public class Usuario {
     @Column(name = "admin", nullable = true)
     private Byte admin;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(
-            name = "usuario_has_examen",
-            joinColumns = {@JoinColumn(name = "usuario_id")},
-            inverseJoinColumns = {@JoinColumn(name = "examen_id")}
-    )
-    private List<Examen> examenes;
+    @OneToMany(mappedBy = "usuario")
+    private List<UsuarioHasExamen> examenes;
 
 
     public int getId() {

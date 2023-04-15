@@ -8,20 +8,17 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "usuario_has_examen", schema = "polesp", catalog = "")
-@IdClass(UsuarioHasExamenPK.class)
 public class UsuarioHasExamen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     private int id;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "usuario_id", nullable = false)
-    private int usuarioId;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "examen_id", nullable = false)
-    private int examenId;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "examen_id")
+    private Examen examen;
     @Basic
     @Column(name = "nota", nullable = true, precision = 0)
     private Double nota;
@@ -37,20 +34,20 @@ public class UsuarioHasExamen {
         this.id = id;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getExamenId() {
-        return examenId;
+    public Examen getExamen() {
+        return examen;
     }
 
-    public void setExamenId(int examenId) {
-        this.examenId = examenId;
+    public void setExamen(Examen examen) {
+        this.examen = examen;
     }
 
     public Double getNota() {
@@ -74,12 +71,12 @@ public class UsuarioHasExamen {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UsuarioHasExamen that = (UsuarioHasExamen) o;
-        return id == that.id && usuarioId == that.usuarioId && examenId == that.examenId && Objects.equals(nota, that.nota) && Objects.equals(fecha, that.fecha);
+        return id == that.id && usuario == that.usuario && examen == that.examen && Objects.equals(nota, that.nota) && Objects.equals(fecha, that.fecha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, usuarioId, examenId, nota, fecha);
+        return Objects.hash(id, usuario, examen, nota, fecha);
     }
 
     @Override
@@ -87,8 +84,8 @@ public class UsuarioHasExamen {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         return "UsuarioHasExamen{" +
                 "id=" + id +
-                ", usuarioId=" + usuarioId +
-                ", examenId=" + examenId +
+                ", usuarioId=" + usuario +
+                ", examenId=" + examen +
                 ", nota=" + nota +
                 ", fecha=" + sdf.format(fecha) +
                 '}';

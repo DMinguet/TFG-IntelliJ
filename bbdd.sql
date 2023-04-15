@@ -52,14 +52,10 @@ CREATE TABLE IF NOT EXISTS `polesp`.`pregunta` (
     INDEX `fk_pregunta_examen1_idx` (`examen_id` ASC),
     CONSTRAINT `fk_preguntas_temario1`
     FOREIGN KEY (`temario_id`)
-    REFERENCES `polesp`.`temario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    REFERENCES `polesp`.`temario` (`id`),
     CONSTRAINT `fk_pregunta_examen1`
     FOREIGN KEY (`examen_id`)
-    REFERENCES `polesp`.`examen` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `polesp`.`examen` (`id`))
     ENGINE = InnoDB;
 
 
@@ -94,11 +90,17 @@ CREATE TABLE IF NOT EXISTS `polesp`.`usuario_has_examen` (
 INSERT INTO polesp.usuario (id, nombre, apellidos, nombre_usuario, contrasenya, email, admin) VALUES (1, 'Daniel', 'Minguet Toril', 'dminguet', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'daminto2001@gmail.com', 1);
 INSERT INTO polesp.usuario (id, nombre, apellidos, nombre_usuario, contrasenya, email, admin) VALUES (2, 'Pepe', 'Reina Fejio', 'pepe', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'pepereina@gmail.com', 0);
 
+INSERT INTO polesp.examen (id, titulo) VALUES (1, 'Examen Tema 1');
+INSERT INTO polesp.examen (id, titulo) VALUES (2, 'Examen Tema 2');
+INSERT INTO polesp.examen (id, titulo) VALUES (3, 'Examen Tema 3');
+INSERT INTO polesp.examen (id, titulo) VALUES (4, 'Examen Tema 4');
+INSERT INTO polesp.examen (id, titulo) VALUES (5, 'Examen Tema 5');
+
 INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (1, 1, 'El Antiguo Régimen', 'https://mega.nz/file/hhk0nKIL#Sqk3EqS4E-x8_Hsz93ijFMP70t-A2pfJOqkfXjsoTpg');
 INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (2, 2, 'El Movimiento Obrero', 'https://mega.nz/file/Q81zUQTY#cwrDJKuLGoy99tdhkCqvYDgrAQJvXEpgLh5JDcCozOQ');
 INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (3, 3, 'La Primera Guerra Mundial', 'https://mega.nz/file/l812zCTA#UE6fzeoXW4v0nwaQvmajpF74SmvcLvT89jsXkYHJPZM');
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (4, 4, 'La Segunda Guerra Mundial', null);
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (5, 5, 'La Guerra Fría', null);
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (4, 4, 'La Segunda Guerra Mundial', 'https://mega.nz/file/dpEkxCYS#rQ2fHJJZEbtzr28h58wnYixcF5xTktgRKItiXsJxm6M');
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (5, 5, 'La Guerra Fría', 'https://mega.nz/file/whcDQRJa#3-BqsLhH8MuYhadhAmRcr78iCCMR--r0m5v8ooxPzhM');
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (1, '¿Por que se carecteriza el antiguo régimen?
 
@@ -301,3 +303,104 @@ c) Perigny (París) el 3 de septiembre de 1938.
 
 d) Ninguna es correcta.', 'C', 2, 2);
 
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (21, 'La Primera Guerra Mundial, anteriormente llamada la Gran Guerra, empezó:
+
+a) El 28 de julio de 1918.
+
+b) El 28 de julio de 1914.
+
+c) El 11 de noviembre de 1918.
+
+d) Ninguna de las anteriores.', 'B', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (22, 'La Primera Guerra Mundial, anteriormente llamada la Gran Guerra, finalizó:
+
+a) El 28 de julio de 1914.
+
+b) El 11 de noviembre de 1914.
+
+c) El 11 de noviembre de 1918.
+
+d) Ninguna de las anteriores es cierta.', 'C', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (23, 'Más de 70 millones de militares, de los cuales 60 millones eran europeos, se movilizaron y combatieron en la entonces guerra más grande de la historia.
+
+a) Falso.
+
+b) Verdadero.
+
+c) Puede ser.
+
+d) Ni idea.', 'B', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (24, 'La detonación del polvorín europea tendría lugar:
+
+a) El 28 de junio de 1914.
+
+b) El 16 de junio de 1914.
+
+c) El 28 de junio de 1916.
+
+d) Ninguna de las anteriores.', 'A', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (25, 'La detonación del polvorín tendría lugar por el asesinato, durante la visita a Sarajevo, de:
+
+a) El Zar Nicolás II y su esposa Antonia.
+
+b) El archiduque Francisco Fernando de Austria y su esposa Sofia.
+
+c) El káiser alemán Guillermo II.
+
+d) Ninguna de las anteriores.', 'B', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (26, 'El Gobierno austrohúngaro dio un ultimátum a Serbia en el que exigía diez demandas imposibles de aceptar y que justificaría una declaración de guerra. ¿En que fecha se realizó?
+
+a) 23 de julio de 1900.
+
+b) 23 de agosto de 1914.
+
+c) 23 de julio de 1914.
+
+d) Ninguna de las anteriores.', 'C', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (27, '¿Qué zar ruso ordenó la movilización de sus tropas y flotas, tras el ultimátum a Serbia?:
+
+a) Vladimiro el Grande.
+
+b) Nicolás II.
+
+c) Andrés II.
+
+d) Ninguno de los anteriores.', 'B', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (28, '¿Qué países fueron los más afectados en la guerra, por sufrir los combates más violentos?
+
+a) Rusia y Bélgica.
+
+b) Italia y Francia.
+
+c) Francia y Bélgica.
+
+d) Ninguna de las anteriores.', 'C', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (29, '¿A qué países benefició la guerra económicamente?:
+
+a) Italia, Argentina y Brasil.
+
+b) Brasil, Argentina y España.
+
+c) Argentina, España y Bélgica.
+
+d) Ninguna de las anteriores.', 'B', 3, 3);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id, examen_id) VALUES (30, 'La riqueza de los estados sufrió un dramático descenso:
+
+a) Francia más del 30%, Alemania cerca del 32%, Italia el 32%.
+
+b) Francia el 32%, Reino Unido el 25%, Italia el 32%.
+
+c) Francia más del 30%, Alemania cerca del 25%, Reino Unido el 32%, Italia el 26%.
+
+d) Ninguna de las anteriores.', 'C', 3, 3);
+
+INSERT INTO polesp.usuario_has_examen (id, usuario_id, examen_id, nota, fecha) VALUES (1, 1, 1, 7.5, '2023-03-15');
