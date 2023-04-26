@@ -16,7 +16,7 @@ public class Examen {
     private String titulo;
 
     @OneToMany(mappedBy = "examen", cascade = CascadeType.ALL)
-    private List<Pregunta> preguntas;
+    private List<PreguntaHasExamen> preguntas;
 
     @OneToMany(mappedBy = "examen")
     private List<UsuarioHasExamen> usuarios;
@@ -35,6 +35,22 @@ public class Examen {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public List<PreguntaHasExamen> getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(List<PreguntaHasExamen> preguntas) {
+        this.preguntas = preguntas;
+    }
+
+    public List<UsuarioHasExamen> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<UsuarioHasExamen> usuarios) {
+        this.usuarios = usuarios;
     }
 
     @Override

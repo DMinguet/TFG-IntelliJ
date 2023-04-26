@@ -90,6 +90,10 @@ public class Usuario {
         this.admin = admin;
     }
 
+    public List<UsuarioHasExamen> getExamenes() {
+        return examenes;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

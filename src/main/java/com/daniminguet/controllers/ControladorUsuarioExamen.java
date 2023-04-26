@@ -20,15 +20,6 @@ public class ControladorUsuarioExamen {
 
     @PostMapping("/add")
     public boolean addExamenUsuario(@RequestBody UsuarioHasExamen examenUsuario) {
-        for (UsuarioHasExamen usuarioHasExamen : repo.findAll()) {
-            if (usuarioHasExamen.getUsuario() == examenUsuario.getUsuario() && usuarioHasExamen.getExamen() == examenUsuario.getExamen()) {
-                System.out.println("El examen del usuario ya existe");
-                return false;
-            }
-        }
-
-        System.out.println(examenUsuario);
-
         try {
             repo.save(examenUsuario);
             System.out.println("Examen del usuario añadido");

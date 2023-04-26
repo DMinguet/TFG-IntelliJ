@@ -2,6 +2,7 @@ package com.daniminguet.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,9 +20,8 @@ public class Pregunta {
     @ManyToOne
     @JoinColumn(name = "temario_id")
     private Temario temario;
-    @ManyToOne
-    @JoinColumn(name = "examen_id")
-    private Examen examen;
+    @OneToMany(mappedBy = "pregunta", cascade = CascadeType.ALL)
+    private List<PreguntaHasExamen> examenes;
 
     public int getId() {
         return id;
@@ -55,12 +55,12 @@ public class Pregunta {
         this.temario = temario;
     }
 
-    public Examen getExamen() {
-        return examen;
+    public List<PreguntaHasExamen> getExamenes() {
+        return examenes;
     }
 
-    public void setExamen(Examen examen) {
-        this.examen = examen;
+    public void setExamenes(List<PreguntaHasExamen> examenes) {
+        this.examenes = examenes;
     }
 
     @Override
@@ -68,12 +68,12 @@ public class Pregunta {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pregunta pregunta1 = (Pregunta) o;
-        return id == pregunta1.id && temario == pregunta1.temario && examen == pregunta1.examen && Objects.equals(pregunta, pregunta1.pregunta) && Objects.equals(respuesta, pregunta1.respuesta);
+        return id == pregunta1.id && temario == pregunta1.temario && Objects.equals(pregunta, pregunta1.pregunta) && Objects.equals(respuesta, pregunta1.respuesta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, pregunta, respuesta, temario, examen);
+        return Objects.hash(id, pregunta, respuesta, temario);
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Pregunta {
                 ", pregunta='" + pregunta + '\'' +
                 ", respuesta=" + respuesta +
                 ", temario=" + temario +
-                ", examen=" + examen +
+                ", examenes=" + examenes +
                 '}';
     }
 }
