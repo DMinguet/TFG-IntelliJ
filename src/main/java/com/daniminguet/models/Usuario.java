@@ -30,10 +30,6 @@ public class Usuario {
     @Column(name = "admin", nullable = true)
     private Byte admin;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<UsuarioHasExamen> examenes;
-
-
     public int getId() {
         return id;
     }
@@ -88,10 +84,6 @@ public class Usuario {
 
     public void setAdmin(Byte admin) {
         this.admin = admin;
-    }
-
-    public List<UsuarioHasExamen> getExamenes() {
-        return examenes;
     }
 
     @Override

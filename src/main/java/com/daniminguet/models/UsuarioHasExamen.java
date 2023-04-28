@@ -84,8 +84,8 @@ public class UsuarioHasExamen {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         return "UsuarioHasExamen{" +
                 "id=" + id +
-                ", usuarioId=" + usuario +
-                ", examenId=" + examen +
+                ", usuario=" + usuario +
+                ", examen=" + examen +
                 ", nota=" + nota +
                 ", fecha=" + sdf.format(fecha) +
                 '}';

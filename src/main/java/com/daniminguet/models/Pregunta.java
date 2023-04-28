@@ -20,8 +20,6 @@ public class Pregunta {
     @ManyToOne
     @JoinColumn(name = "temario_id")
     private Temario temario;
-    @OneToMany(mappedBy = "pregunta", cascade = CascadeType.ALL)
-    private List<PreguntaHasExamen> examenes;
 
     public int getId() {
         return id;
@@ -55,14 +53,6 @@ public class Pregunta {
         this.temario = temario;
     }
 
-    public List<PreguntaHasExamen> getExamenes() {
-        return examenes;
-    }
-
-    public void setExamenes(List<PreguntaHasExamen> examenes) {
-        this.examenes = examenes;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,7 +73,6 @@ public class Pregunta {
                 ", pregunta='" + pregunta + '\'' +
                 ", respuesta=" + respuesta +
                 ", temario=" + temario +
-                ", examenes=" + examenes +
                 '}';
     }
 }

@@ -60,11 +60,13 @@ CREATE TABLE IF NOT EXISTS `polesp`.`usuario_has_examen` (
     ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `polesp`.`pregunta_has_examen` (
+    `id` INT NOT NULL AUTO_INCREMENT,
     `pregunta_id` INT NOT NULL,
     `examen_id` INT NOT NULL,
-    PRIMARY KEY (`pregunta_id`, `examen_id`),
+    PRIMARY KEY (`id`),
     INDEX `fk_pregunta_has_examen_examen1_idx` (`examen_id` ASC),
     INDEX `fk_pregunta_has_examen_pregunta1_idx` (`pregunta_id` ASC),
+    UNIQUE INDEX `pregunta_id_UNIQUE` (`pregunta_id` ASC, `examen_id` ASC),
     CONSTRAINT `fk_pregunta_has_examen_pregunta1`
     FOREIGN KEY (`pregunta_id`)
     REFERENCES `polesp`.`pregunta` (`id`),

@@ -7,16 +7,20 @@ import java.util.Objects;
 @Entity
 @Table(name = "pregunta_has_examen", schema = "polesp", catalog = "")
 public class PreguntaHasExamen {
-    @ManyToOne
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @JoinColumn(name = "pregunta_id", nullable = false)
+    @Column(name = "id", nullable = false)
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "pregunta_id")
     private Pregunta pregunta;
     @ManyToOne
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @JoinColumn(name = "examen_id", nullable = false)
+    @JoinColumn(name = "examen_id")
     private Examen examen;
+
+    public int getId() {
+        return id;
+    }
 
     public Pregunta getPregunta() {
         return pregunta;

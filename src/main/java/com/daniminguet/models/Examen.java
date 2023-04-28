@@ -15,12 +15,6 @@ public class Examen {
     @Column(name = "titulo", nullable = true, length = 45)
     private String titulo;
 
-    @OneToMany(mappedBy = "examen", cascade = CascadeType.ALL)
-    private List<PreguntaHasExamen> preguntas;
-
-    @OneToMany(mappedBy = "examen")
-    private List<UsuarioHasExamen> usuarios;
-
     public int getId() {
         return id;
     }
@@ -35,22 +29,6 @@ public class Examen {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public List<PreguntaHasExamen> getPreguntas() {
-        return preguntas;
-    }
-
-    public void setPreguntas(List<PreguntaHasExamen> preguntas) {
-        this.preguntas = preguntas;
-    }
-
-    public List<UsuarioHasExamen> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(List<UsuarioHasExamen> usuarios) {
-        this.usuarios = usuarios;
     }
 
     @Override
@@ -71,8 +49,6 @@ public class Examen {
         return "Examen{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
-                ", preguntas=" + preguntas +
-                ", usuarios=" + usuarios +
                 '}';
     }
 }
