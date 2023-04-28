@@ -32,9 +32,9 @@ public class ControladorPreguntaExamen {
     }
 
     @DeleteMapping("/delete")
-    public boolean deletePreguntaExamen(@RequestBody PreguntaHasExamen preguntaExamen) {
+    public boolean deletePreguntaExamen(@PathVariable("id") Integer id) {
         try {
-            repo.delete(preguntaExamen);
+            repo.deleteById(id);
             System.out.println("Pregunta de examen eliminada");
             return true;
         } catch (Exception e) {
