@@ -31,7 +31,7 @@ public class ControladorPreguntaExamen {
         }
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/{id}")
     public boolean deletePreguntaExamen(@PathVariable("id") Integer id) {
         try {
             repo.deleteById(id);
