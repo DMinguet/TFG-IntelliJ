@@ -19,9 +19,10 @@ public class ControladorPreguntaExamen {
     }
 
     @PostMapping("/add")
-    public boolean addPreguntaExamen(@RequestBody PreguntaHasExamen preguntaExamen) {
+    public boolean addPreguntaExamen(@RequestBody PreguntaHasExamen preguntaHasExamen) {
+        System.out.println(preguntaHasExamen);
         try {
-            repo.save(preguntaExamen);
+            repo.save(preguntaHasExamen);
             System.out.println("Pregunta de examen añadida");
             return true;
         } catch (Exception e) {

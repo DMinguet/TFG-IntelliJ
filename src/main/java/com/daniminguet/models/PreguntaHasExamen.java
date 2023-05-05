@@ -50,4 +50,13 @@ public class PreguntaHasExamen {
     public int hashCode() {
         return Objects.hash(pregunta, examen);
     }
+
+    @Override
+    public String toString() {
+        return "PreguntaHasExamen{" +
+                "id=" + id +
+                ", pregunta=" + pregunta +
+                ", examen=" + examen +
+                '}';
+    }
 }
