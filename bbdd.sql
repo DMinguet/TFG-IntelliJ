@@ -87,12 +87,14 @@ INSERT INTO polesp.examen (id, titulo) VALUES (2, 'Examen Tema 2');
 INSERT INTO polesp.examen (id, titulo) VALUES (3, 'Examen Tema 3');
 INSERT INTO polesp.examen (id, titulo) VALUES (4, 'Examen Tema 4');
 INSERT INTO polesp.examen (id, titulo) VALUES (5, 'Examen Tema 5');
+INSERT INTO polesp.examen (id, titulo) VALUES (6, 'Examen Tema 1 y 2');
 
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (1, 1, 'El Antiguo Régimen', 'https://mega.nz/file/hhk0nKIL#Sqk3EqS4E-x8_Hsz93ijFMP70t-A2pfJOqkfXjsoTpg');
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (2, 2, 'El Movimiento Obrero', 'https://mega.nz/file/Q81zUQTY#cwrDJKuLGoy99tdhkCqvYDgrAQJvXEpgLh5JDcCozOQ');
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (3, 3, 'La Primera Guerra Mundial', 'https://mega.nz/file/l812zCTA#UE6fzeoXW4v0nwaQvmajpF74SmvcLvT89jsXkYHJPZM');
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (4, 4, 'La Segunda Guerra Mundial', 'https://mega.nz/file/dpEkxCYS#rQ2fHJJZEbtzr28h58wnYixcF5xTktgRKItiXsJxm6M');
-INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (5, 5, 'La Guerra Fría', 'https://mega.nz/file/whcDQRJa#3-BqsLhH8MuYhadhAmRcr78iCCMR--r0m5v8ooxPzhM');
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (1, null, 'Sin Asignar', null);
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (2, 1, 'El Antiguo Régimen', 'https://mega.nz/file/hhk0nKIL#Sqk3EqS4E-x8_Hsz93ijFMP70t-A2pfJOqkfXjsoTpg');
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (3, 2, 'El Movimiento Obrero', 'https://mega.nz/file/Q81zUQTY#cwrDJKuLGoy99tdhkCqvYDgrAQJvXEpgLh5JDcCozOQ');
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (4, 3, 'La Primera Guerra Mundial', 'https://mega.nz/file/l812zCTA#UE6fzeoXW4v0nwaQvmajpF74SmvcLvT89jsXkYHJPZM');
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (5, 4, 'La Segunda Guerra Mundial', 'https://mega.nz/file/dpEkxCYS#rQ2fHJJZEbtzr28h58wnYixcF5xTktgRKItiXsJxm6M');
+INSERT INTO polesp.temario (id, tema, titulo, pdf) VALUES (6, 5, 'La Guerra Fría', 'https://mega.nz/file/whcDQRJa#3-BqsLhH8MuYhadhAmRcr78iCCMR--r0m5v8ooxPzhM');
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (1, '¿Por que se carecteriza el antiguo régimen?
 
@@ -102,7 +104,7 @@ b) Por una alta tasa de natalidad y mortalidad.
 
 c) Por la falta de higiene.
 
-d) La a) y la c) son correctas.', 'B', 1);
+d) La a) y la c) son correctas.', 'B', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (2, 'En el sistema político que surgió en Europa en la segunda mitad del Siglo XVIII. Entre los monarcas que ejercieron el despotismo ilustrado figuran:
 
@@ -112,7 +114,7 @@ b) José II de Austria, Federico II de España, Catalina I de Prusia.
 
 c) Catalina II de Rusia, José II de Austria, Federico II de Prusia y Carlos III de España.
 
-d) Jose I de Rusia, Juan Carlos I de España, Catalina de Aragón, Juana la Loca.', 'C', 1);
+d) Jose I de Rusia, Juan Carlos I de España, Catalina de Aragón, Juana la Loca.', 'C', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (3, '¿Cuando se desarrolla el rococó como estilo artístico?
 
@@ -122,7 +124,7 @@ b) En España entre los años 1736 y 1760.
 
 c) En Francia entre 1730 y 1760.
 
-d) Ninguna respuesta es correcta.', 'C', 1);
+d) Ninguna respuesta es correcta.', 'C', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (4, 'En general, las poblaciones europeas del Antiguo Régimen tenían una serie de rasgos comunes. Señale la respuesta correcta:
 
@@ -132,7 +134,7 @@ b) Una alta natalidad (7 hijos de media por matrimonio), con una esperanza de vi
 
 c) Una alta tasa de mortalidad, causada por la subalimentación, la falta de higiene.
 
-d) Ninguna es cierta', 'A', 1);
+d) Ninguna es cierta', 'A', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (5, 'Entre los objetivos del sistema político que surgió en Europa en la segunda mitad del Siglo XVIII, se encuentran los siguientes:
 
@@ -142,7 +144,7 @@ b) Racionalizar la Administración con el apoyo de secretarios y ministros ilust
 
 c) Promover programas de desarrollo agrícola e industrial y liberalizar el comercio.
 
-d) Todas son correctas.', 'D', 1);
+d) Todas son correctas.', 'D', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (6, '¿Durante que siglo se desarrolla en Europa el barroco no sólo como estilo artístico, sino también como movimiento cultural?
 
@@ -152,7 +154,7 @@ b) En el siglo XVIII y el principio del XIV.
 
 c) En el siglo XVI y el primer tercio del siglo XVII.
 
-d) En el siglo XVII y el primer tercio del siglo XVIII.', 'D', 1);
+d) En el siglo XVII y el primer tercio del siglo XVIII.', 'D', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (7, '¿Cuál de las siguientes afirmaciones es correcta?
 
@@ -162,7 +164,7 @@ b) El rococó se desarrolló en Francia entre los años 1930 y 1960.
 
 c) La Ilustración surge como sistema político en Europa en el siglo XVII.
 
-d) Ninguna afirmación es correcta.', 'A', 1);
+d) Ninguna afirmación es correcta.', 'A', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (8, 'El sistema demográfico de las sociedades del Antiguo Régimen se caracterizaba por las siguientes afirmaciones:
 
@@ -173,7 +175,7 @@ agraria.
 
 c) Por el desarrollo del barroco no solo como estilo artístico, sino también como movimiento cultural.
 
-d) Todas las respuestas son incorrectas.', 'B', 1);
+d) Todas las respuestas son incorrectas.', 'B', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (9, 'Durante el siglo XVII y el primer tercio del siglo XVIII, se desarrolló en Europa:
 
@@ -183,7 +185,7 @@ b) El barroco no sólo como estilo artístico, sino también como movimiento cul
 
 c) El barroco como un estilo únicamente artístico desarrollado entre 1730 y 1760.
 
-d) Ninguna afirmación es correcta.', 'B', 1);
+d) Ninguna afirmación es correcta.', 'B', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (10, 'Un rasgo común de las poblaciones europeas del Antiguo Régimen era:
 
@@ -193,7 +195,7 @@ b) El rococó es un estilo perteneciente al movimiento cultural.
 
 c) Un crecimiento natural que podría no llegar a superar el 2 por mil anual.
 
-d) Todas las afirmaciones son incorrectas.', 'C', 1);
+d) Todas las afirmaciones son incorrectas.', 'C', 2);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (11, 'El movimiento obrero, también conocido como obrerismo, se define como:
 
@@ -203,7 +205,7 @@ b) Es un movimiento político en el que los trabajadores asalariados, se asocian
 
 c) Es un movimiento que no cuestionaba la industrialización, sino que reclamaba cofradías agrupadas de los trabajadores.
 
-d) Ninguna es cierta.', 'B', 2);
+d) Ninguna es cierta.', 'B', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (12, 'En los primeros decenios de la industrialización se produjo una degradación de las condiciones de vida de los trabajadores, y entre ellas se encontraban las siguientes:
 
@@ -213,7 +215,7 @@ b) Pérdida salarial.
 
 c) Generación del trabajo infantil y femenino.
 
-d) Todas las respuestas son correctas.', 'D', 2);
+d) Todas las respuestas son correctas.', 'D', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (13, 'El surgimiento de los modernos Estados nacionales e industrializados como Italia, Alemania y Francia, se produce entre los años:
 
@@ -223,7 +225,7 @@ b) Entre 1850 y 1880.
 
 c) Entre 1750 y 1835.
 
-d) Ninguna es correcta.', 'B', 2);
+d) Ninguna es correcta.', 'B', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (14, 'La Asociación Internacional de los Trabajadores o Primera Internacional, fue fundada en:
 
@@ -233,7 +235,7 @@ b) En Francia en 1870.
 
 c) En Italia en 1863.
 
-d) Ninguna es correcta.', 'A', 2);
+d) Ninguna es correcta.', 'A', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (15, 'Indica cual de las siguientes afirmaciones se encuentra entre los fines de la Primera Internacional:
 
@@ -243,7 +245,7 @@ b) La organización política del proletariado en Europa y el resto del mundo, a
 
 c) Todas son correctas.
 
-d) Ninguna es correcta.', 'B', 2);
+d) Ninguna es correcta.', 'B', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (16, 'En 1872 el Consejo General de la AIT se trasladó desde Londres, como producto de la reacción contrarrevolucionaria de Europa. ¿A que Ciudad se traslada tras la derrota?
 
@@ -253,7 +255,7 @@ b) Nueva York.
 
 c) Italia.
 
-d) Ninguna es correcta.', 'B', 2);
+d) Ninguna es correcta.', 'B', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (17, 'La Segunda Internacional se establece en 1889, de corte socialdemócrata, como la sucesora en sus fines políticos, y durará hasta:
 
@@ -263,7 +265,7 @@ b) 1915.
 
 c) 1916.
 
-d) Ninguna es correcta.', 'C', 2);
+d) Ninguna es correcta.', 'C', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (18, 'Al ser fundada la Segunda Internacional, tuvo lugar la división de la mayor parte del movimiento obrero, debido, entre otros factores, a las diferencias entre:
 
@@ -273,7 +275,7 @@ b) Mijaíl Bakunin y Engels.
 
 c) Karl Marx y Mijaíl Bakunin.
 
-d) Ninguna es correcta.', 'C', 2);
+d) Ninguna es correcta.', 'C', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (19, 'La Tercera Internacional se funda tras la llegada del comunismo a Rusia en:
 
@@ -283,7 +285,7 @@ b) 1918.
 
 c) 1917.
 
-d) Ninguna es correcta.', 'B', 2);
+d) Ninguna es correcta.', 'B', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (20, 'La Cuarta Internacional (1879-1940) fue establecida en un congreso de delegados en:
 
@@ -293,7 +295,7 @@ b) Roma (Italia) el 3 de septiembre de 1938.
 
 c) Perigny (París) el 3 de septiembre de 1938.
 
-d) Ninguna es correcta.', 'C', 2);
+d) Ninguna es correcta.', 'C', 3);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (21, 'La Primera Guerra Mundial, anteriormente llamada la Gran Guerra, empezó:
 
@@ -303,7 +305,7 @@ b) El 28 de julio de 1914.
 
 c) El 11 de noviembre de 1918.
 
-d) Ninguna de las anteriores.', 'B', 3);
+d) Ninguna de las anteriores.', 'B', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (22, 'La Primera Guerra Mundial, anteriormente llamada la Gran Guerra, finalizó:
 
@@ -313,7 +315,7 @@ b) El 11 de noviembre de 1914.
 
 c) El 11 de noviembre de 1918.
 
-d) Ninguna de las anteriores es cierta.', 'C', 3);
+d) Ninguna de las anteriores es cierta.', 'C', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (23, 'Más de 70 millones de militares, de los cuales 60 millones eran europeos, se movilizaron y combatieron en la entonces guerra más grande de la historia.
 
@@ -323,7 +325,7 @@ b) Verdadero.
 
 c) Puede ser.
 
-d) Ni idea.', 'B', 3);
+d) Ni idea.', 'B', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (24, 'La detonación del polvorín europea tendría lugar:
 
@@ -333,7 +335,7 @@ b) El 16 de junio de 1914.
 
 c) El 28 de junio de 1916.
 
-d) Ninguna de las anteriores.', 'A', 3);
+d) Ninguna de las anteriores.', 'A', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (25, 'La detonación del polvorín tendría lugar por el asesinato, durante la visita a Sarajevo, de:
 
@@ -343,7 +345,7 @@ b) El archiduque Francisco Fernando de Austria y su esposa Sofia.
 
 c) El káiser alemán Guillermo II.
 
-d) Ninguna de las anteriores.', 'B', 3);
+d) Ninguna de las anteriores.', 'B', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (26, 'El Gobierno austrohúngaro dio un ultimátum a Serbia en el que exigía diez demandas imposibles de aceptar y que justificaría una declaración de guerra. ¿En que fecha se realizó?
 
@@ -353,7 +355,7 @@ b) 23 de agosto de 1914.
 
 c) 23 de julio de 1914.
 
-d) Ninguna de las anteriores.', 'C', 3);
+d) Ninguna de las anteriores.', 'C', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (27, '¿Qué zar ruso ordenó la movilización de sus tropas y flotas, tras el ultimátum a Serbia?:
 
@@ -363,7 +365,7 @@ b) Nicolás II.
 
 c) Andrés II.
 
-d) Ninguno de los anteriores.', 'B', 3);
+d) Ninguno de los anteriores.', 'B', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (28, '¿Qué países fueron los más afectados en la guerra, por sufrir los combates más violentos?
 
@@ -373,7 +375,7 @@ b) Italia y Francia.
 
 c) Francia y Bélgica.
 
-d) Ninguna de las anteriores.', 'C', 3);
+d) Ninguna de las anteriores.', 'C', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (29, '¿A qué países benefició la guerra económicamente?:
 
@@ -383,7 +385,7 @@ b) Brasil, Argentina y España.
 
 c) Argentina, España y Bélgica.
 
-d) Ninguna de las anteriores.', 'B', 3);
+d) Ninguna de las anteriores.', 'B', 4);
 
 INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (30, 'La riqueza de los estados sufrió un dramático descenso:
 
@@ -393,37 +395,48 @@ b) Francia el 32%, Reino Unido el 25%, Italia el 32%.
 
 c) Francia más del 30%, Alemania cerca del 25%, Reino Unido el 32%, Italia el 26%.
 
-d) Ninguna de las anteriores.', 'C', 3);
+d) Ninguna de las anteriores.', 'C', 4);
 
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (1, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (2, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (3, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (4, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (5, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (6, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (7, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (8, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (9, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (10, 1);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (11, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (12, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (13, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (14, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (15, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (16, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (17, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (18, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (19, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (20, 2);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (21, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (22, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (23, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (24, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (25, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (26, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (27, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (28, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (29, 3);
-INSERT INTO polesp.pregunta_has_examen (pregunta_id, examen_id) VALUES (30, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (1, 1, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (2, 2, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (3, 3, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (4, 4, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (5, 5, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (6, 6, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (7, 7, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (8, 8, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (9, 9, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (10, 10, 1);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (11, 11, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (12, 12, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (13, 13, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (14, 14, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (15, 15, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (16, 16, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (17, 17, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (18, 18, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (19, 19, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (20, 20, 2);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (21, 21, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (22, 22, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (23, 23, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (24, 24, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (25, 25, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (26, 26, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (27, 27, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (28, 28, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (29, 29, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (30, 30, 3);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (31, 1, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (32, 2, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (33, 3, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (34, 4, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (36, 5, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (37, 11, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (38, 12, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (39, 13, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (40, 14, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (41, 15, 6);
 
 INSERT INTO polesp.usuario_has_examen (id, usuario_id, examen_id, nota, fecha) VALUES (1, 1, 1, 7.5, '2023-03-15');
+INSERT INTO polesp.usuario_has_examen (id, usuario_id, examen_id, nota, fecha) VALUES (2, 2, 2, 9.5, '2023-05-24');

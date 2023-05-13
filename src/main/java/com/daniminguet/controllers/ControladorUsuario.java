@@ -1,7 +1,9 @@
 package com.daniminguet.controllers;
 
 import com.daniminguet.models.Usuario;
+import com.daniminguet.models.UsuarioHasExamen;
 import com.daniminguet.repo.IUsuarioDao;
+import com.daniminguet.repo.IUsuarioExamenDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,8 @@ import java.util.Optional;
 public class ControladorUsuario {
     @Autowired
     private IUsuarioDao repo;
+    @Autowired
+    private IUsuarioExamenDao repoRelacion;
 
     @GetMapping("/all")
     public List<Usuario> getUsers() {
@@ -74,6 +78,12 @@ public class ControladorUsuario {
     @DeleteMapping(value = "/{id}")
     public boolean deleteUser(@PathVariable("id") Integer id) {
         try {
+            for (UsuarioHasExamen usuarioHasExamen : repoRelacion.findAll()) {
+                if (usuarioHasExamen.getUsuario().getId() == id) {
+                    repoRelacion.deleteById(usuarioHasExamen.getId());
+                }
+            }
+
             repo.deleteById(id);
             System.out.println("Usuario eliminado correctamente");
             return true;

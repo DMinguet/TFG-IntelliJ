@@ -98,4 +98,17 @@ public class Usuario {
     public int hashCode() {
         return Objects.hash(id, nombre, apellidos, nombreUsuario, contrasenya, email, admin);
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", nombreUsuario='" + nombreUsuario + '\'' +
+                ", contrasenya='" + contrasenya + '\'' +
+                ", email='" + email + '\'' +
+                ", admin=" + admin +
+                '}';
+    }
 }

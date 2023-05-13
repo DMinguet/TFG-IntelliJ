@@ -1,7 +1,9 @@
 package com.daniminguet.controllers;
 
 import com.daniminguet.models.Pregunta;
+import com.daniminguet.models.PreguntaHasExamen;
 import com.daniminguet.repo.IPreguntaDao;
+import com.daniminguet.repo.IPreguntaExamenDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,8 @@ import java.util.Optional;
 public class ControladorPregunta {
     @Autowired
     private IPreguntaDao repo;
+    @Autowired
+    private IPreguntaExamenDao repoRelacion;
 
     @GetMapping("/all")
     public List<Pregunta> getPreguntas() {
@@ -71,6 +75,12 @@ public class ControladorPregunta {
     @DeleteMapping(value = "/{id}")
     public boolean deletePregunta(@PathVariable("id") Integer id) {
         try {
+            for (PreguntaHasExamen preguntaHasExamen : repoRelacion.findAll()) {
+                if (preguntaHasExamen.getPregunta().getId() == id) {
+                    repoRelacion.deleteById(preguntaHasExamen.getId());
+                }
+            }
+
             repo.deleteById(id);
             System.out.println("Pregunta eliminada correctamente");
             return true;

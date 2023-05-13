@@ -17,7 +17,7 @@ public class Pregunta {
     @Basic
     @Column(name = "respuesta", nullable = true)
     private String respuesta;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "temario_id")
     private Temario temario;
 

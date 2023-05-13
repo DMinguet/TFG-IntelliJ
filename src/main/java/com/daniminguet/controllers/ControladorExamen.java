@@ -1,7 +1,11 @@
 package com.daniminguet.controllers;
 
 import com.daniminguet.models.Examen;
+import com.daniminguet.models.PreguntaHasExamen;
+import com.daniminguet.models.UsuarioHasExamen;
 import com.daniminguet.repo.IExamenDao;
+import com.daniminguet.repo.IPreguntaExamenDao;
+import com.daniminguet.repo.IUsuarioExamenDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +17,10 @@ import java.util.Optional;
 public class ControladorExamen {
     @Autowired
     private IExamenDao repo;
+    @Autowired
+    private IUsuarioExamenDao repoUsuarioExamen;
+    @Autowired
+    private IPreguntaExamenDao repoPreguntaExamen;
 
     @GetMapping("/all")
     public List<Examen> getExamenes() {
@@ -66,6 +74,18 @@ public class ControladorExamen {
     @DeleteMapping(value = "/{id}")
     public boolean deleteExamen(@PathVariable("id") Integer id) {
         try {
+            for (UsuarioHasExamen usuarioHasExamen : repoUsuarioExamen.findAll()) {
+                if (usuarioHasExamen.getExamen().getId() == id) {
+                    repoUsuarioExamen.deleteById(usuarioHasExamen.getId());
+                }
+            }
+
+            for (PreguntaHasExamen preguntaHasExamen : repoPreguntaExamen.findAll()) {
+                if (preguntaHasExamen.getExamen().getId() == id) {
+                    repoPreguntaExamen.deleteById(preguntaHasExamen.getId());
+                }
+            }
+
             repo.deleteById(id);
             System.out.println("Examen eliminado correctamente");
             return true;

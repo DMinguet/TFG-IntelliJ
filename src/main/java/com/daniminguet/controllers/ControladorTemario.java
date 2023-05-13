@@ -1,6 +1,9 @@
 package com.daniminguet.controllers;
 
+import com.daniminguet.models.Pregunta;
 import com.daniminguet.models.Temario;
+import com.daniminguet.models.UsuarioHasExamen;
+import com.daniminguet.repo.IPreguntaDao;
 import com.daniminguet.repo.ITemarioDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,8 @@ import java.util.Optional;
 public class ControladorTemario {
     @Autowired
     private ITemarioDao repo;
+    @Autowired
+    private IPreguntaDao repoRelacion;
 
     @GetMapping("/all")
     public List<Temario> getTemarios() {
@@ -72,6 +77,13 @@ public class ControladorTemario {
     @DeleteMapping(value = "/{id}")
     public boolean deleteTemario(@PathVariable("id") Integer id) {
         try {
+            for (Pregunta pregunta : repoRelacion.findAll()) {
+                if (pregunta.getTemario().getId() == id) {
+                    pregunta.setTemario(repo.getReferenceById(1));
+                    repoRelacion.save(pregunta);
+                }
+            }
+
             repo.deleteById(id);
             System.out.println("Temario eliminado correctamente");
             return true;
