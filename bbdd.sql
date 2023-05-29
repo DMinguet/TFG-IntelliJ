@@ -397,6 +397,206 @@ c) Francia más del 30%, Alemania cerca del 25%, Reino Unido el 32%, Italia el 2
 
 d) Ninguna de las anteriores.', 'C', 4);
 
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (31, '¿Que fue la Segunda Guerra Mundial?:
+
+a) Un conflicto nacional español.
+
+b) Un dictamen de paz.
+
+c) Un conflicto europeo.
+
+d) Un conflicto militar global.', 'D', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (32, '¿Entre que años se desarrolló la Segunda Guerra Mundial?:
+
+a) Entre el 1834 y el 1840.
+
+b) Entre el 1934 y el 1840.
+
+c) Entre el 1939 y el 1945.
+
+d) Entre el 1950 y el 1958.', 'C', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (33, '¿Cuántas alianzas militares hubieron?:
+
+a) Sólo dos; Rusia y El Eje.
+
+b) Tres; Rusia, Estados Unidos y El Eje.
+
+c) Sólo dos; Los Aliados y El Eje.
+
+d) Ninguna de las anteriores es cierta.', 'C', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (34, 'Principales integrantes de "El Eje":
+
+a) La Alemania Nazi, el Reino de Italia y el Imperio del Japón.
+
+b) La Alemania Nazi.
+
+c) La Alemania Nazi y el Imperio del Japón.
+
+d) Ninguna de las anteriores es cierta.', 'A', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (35, '¿Que fue "El Holocausto"?:
+
+a) Una bomba atómica detonó en Estados Unidos.
+
+b) Asesinato en masa de muchos judíos.
+
+c) Rusia perdió muchas vidas jovenes, por lo que quedaron muy pocos y lo que más eran viejos o muy jovenes.
+
+d) Ninguna de las anteriores es cierta.', 'B', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (36, '¿Qué produjo la guerra?:
+
+a) La invasión de Polonia por parte de Hitler.
+
+b) Rusia decidió atacar Alemania.
+
+c) Alemania decidió invadir Rusia.
+
+d) Ninguna de las anteriores es cierta.', 'A', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (37, '¿Cuáles fueron los principales avances en la tecnología?:
+
+a) Sólo trajo muerte.
+
+b) Muchas cosas.
+
+c) Fusiles mejor adaptados y bicicleta.
+
+d) La Penicilina, energía nuclear, las computadoras, el sónar, cohete precursor de la Luna, motor a reacción.', 'D', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (38, '¿Qué fue el Día D?:
+
+a) Todas son ciertas.
+
+b) Se inició la operación Overlord para recuperar Europa.
+
+c) Más de 150.000 soldados aliados desembarcaron en Normandía, Francia.
+
+d) Fue el inicio de la recuperación de la Europa occidental por parte de Los Aliados.', 'A', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (39, '¿Cuáles fueron las principales consecuencias?:
+
+a) Desencadenó una nueva guerra, aunque mucho menos mortal.
+
+b) Las muertes en masa y la destrucción de ciudades, pueblos y más.
+
+c) Violaciones y muertes masivas, uso de bombas atómicas.
+
+d) La a y la c son correctas.', 'D', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (40, 'Principales integrantes de "Los Aliados":
+
+a) Unión Soviética y Estados Unidos.
+
+b) Reino Unido, Estados Unidos y Francia.
+
+c) Reino Unido, Estados Unidos, Francia, la Unión Soviética y China.
+
+d) Japón, China, Estados Unidos y Reino Unido.', 'C', 5);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (41, '¿Qué fue la Guerra Fría?:
+
+a) Una guerra después de una guerra.
+
+b) Una guerra entre dos principales bandos.
+
+c) Un enfrentamiento político, económico, social, ideológico, militar e informativo.
+
+d) Todas son ciertas.', 'D', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (42, 'Principales integrantes de la Guerra Fría:
+
+a) Alemania y la Unión Soviética.
+
+b) Estados Unidos y Alemania.
+
+c) China y Estados Unidos.
+
+d) Ninguna de las anteriores es cierta.', 'D', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (43, '¿Por qué competían las mayores potencias?:
+
+a) Influencia en América Latina, Oriente Próximo y los estados recién descolonizados de África y Asia.
+
+b) Por la mayor ruta de comercio.
+
+c) Por el mayor beneficio de su propio país.
+
+d) Todas son ciertas.', 'A', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (44, '¿Cómo se originó?:
+
+a) Tensión entre Estados Unidos y Unión Soviética.
+
+b) Derrumbe de Europa como potencia mundial.
+
+c) Tensiones del reparto político-territorial de Alemania.
+
+d) Todas son ciertas.', 'D', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (45, 'Consecuencias:
+
+a) El comunismo llegó a su máximo esplendor.
+
+b) Reconfiguración del poder mundial.
+
+c) Derrocamiento de Estados Unidos.
+
+d) Ninguna es cierta.', 'B', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (46, '¿Cómo fue el fin de la Guerra Fría?:
+
+a) Culminó con la toma de media Europa.
+
+b) Culminó con el desplome de Estados Unidos.
+
+c) Culminó con el desplome de la Unión Soviética.
+
+d) Ninguna es cierta.', 'C', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (47, 'Principales crisis:
+
+a) Misiles de Cuba.
+
+b) Guerra civil china.
+
+c) Crisis de Berlín.
+
+d) Todas son ciertas.', 'D', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (48, '¿Que pasó entre la URSS y China?:
+
+a) Se complicaron las relaciones en la esfera comunista.
+
+b) Se hicieron más fuertes e influyentes.
+
+c) Se declararon enemigos.
+
+d) Todas son ciertas.', 'A', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (49, '¿Que pasó entre Francia y la OTAN?:
+
+a) La OTAN despidió a Francia.
+
+b) Francia se convirtió en el principal líder de la OTAN.
+
+c) Francia dejó la OTAN por un tiempo.
+
+d) Todas son ciertas.', 'C', 6);
+
+INSERT INTO polesp.pregunta (id, pregunta, respuesta, temario_id) VALUES (50, 'Principales problemas de Estados Unidos:
+
+a) La URSS.
+
+b) El movimiento de derechos civiles y la guerra de Vietnam.
+
+c) El movimiento de derechos civiles, la URSS y la guerra de Vietnam.
+
+d) Ninguna es cierta.', 'C', 6);
+
 INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (1, 1, 1);
 INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (2, 2, 1);
 INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (3, 3, 1);
@@ -431,12 +631,32 @@ INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (31, 
 INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (32, 2, 6);
 INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (33, 3, 6);
 INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (34, 4, 6);
-INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (36, 5, 6);
-INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (37, 11, 6);
-INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (38, 12, 6);
-INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (39, 13, 6);
-INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (40, 14, 6);
-INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (41, 15, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (35, 5, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (36, 11, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (37, 12, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (38, 13, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (39, 14, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (40, 15, 6);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (41, 31, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (42, 32, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (43, 33, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (44, 34, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (45, 35, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (46, 36, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (47, 37, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (48, 38, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (49, 39, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (50, 40, 4);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (51, 41, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (52, 42, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (53, 43, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (54, 44, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (55, 45, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (56, 46, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (57, 47, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (58, 48, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (59, 49, 5);
+INSERT INTO polesp.pregunta_has_examen (id, pregunta_id, examen_id) VALUES (60, 50, 5);
 
 INSERT INTO polesp.usuario_has_examen (id, usuario_id, examen_id, nota, fecha) VALUES (1, 1, 1, 7.5, '2023-03-15');
 INSERT INTO polesp.usuario_has_examen (id, usuario_id, examen_id, nota, fecha) VALUES (2, 2, 2, 9.5, '2023-05-24');
